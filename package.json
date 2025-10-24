@@ -1,0 +1,26 @@
+{
+  "name": "eniac_projeto_2_sem",
+  "version": "1.0.0",
+  "description": "Projeto para a faculdade ENIAC 2º Semestre",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run tailwind:watch\" \"npm run copy:watch\"",
+    "build": "npm run tailwind:build && npm run copy:build",
+    "tailwind:watch": "tailwindcss -i ./src/css/style.css -o ./build/style.css --watch",
+    "tailwind:build": "tailwindcss -i ./src/css/style.css -o ./build/style.css --minify",
+    "copy:watch": "nodemon --watch src/jsp --ext jsp --exec 'npm run copy:build'",
+    "copy:build": "cp -r src/jsp/* build/ && cp -r src/assets build/"
+  },
+  "author": "Ryan Prado",
+  "license": "MIT",
+  "dependencies": {
+    "autoprefixer": "^10.4.21",
+    "nodemon": "^3.0.2",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.16"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.16",
+    "concurrently": "^9.2.1"
+  }
+}

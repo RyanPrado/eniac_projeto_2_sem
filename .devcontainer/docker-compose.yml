@@ -1,0 +1,40 @@
+version: "3.8"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ../..:/workspaces:cached
+    working_dir: /workspaces/${localWorkspaceFolderBasename}
+    command: sleep infinity
+    depends_on:
+      - mysql
+      - tomcat
+
+  mysql:
+    image: mysql:8.0
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: mydb
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  tomcat:
+    image: tomcat:9-jdk11
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    volumes:
+      - ../build:/usr/local/tomcat/webapps/ROOT
+    depends_on:
+      - mysql
+
+volumes:
+  mysql-data:
