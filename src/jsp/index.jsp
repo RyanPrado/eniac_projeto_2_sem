@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%
-    String PAGE_TITLE = "Home Page";
+    String PAGE_TITLE = "Home - MONTE SINAI";
 %>
 
 <!DOCTYPE html>
@@ -13,7 +13,7 @@
     <%@ include file="components/header.jsp" %>
     <main class="min-h-screen">
         <div class="container mx-auto mt-2 lg:mt-8 px-8">
-            <%@ include file="components/hero_section.jsp" %>
+            <%@ include file="components/home/hero_section.jsp" %>
         </div>
     </main>
     <%@ include file="components/footer.jsp" %>

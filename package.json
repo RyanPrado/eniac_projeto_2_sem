@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "concurrently \"npm run tailwind:watch\" \"npm run copy:watch\"",
     "build": "npm run tailwind:build && npm run copy:build",
-    "tailwind:watch": "tailwindcss -i ./src/css/style.css -o ./build/style.css --watch",
-    "tailwind:build": "tailwindcss -i ./src/css/style.css -o ./build/style.css --minify",
+    "tailwind:watch": "postcss ./src/css/style.css -o ./build/style.css --watch",
+    "tailwind:build": "NODE_ENV=production postcss ./src/css/style.css -o ./build/style.css",
     "copy:watch": "nodemon --watch src/jsp --ext jsp --exec 'npm run copy:build'",
     "copy:build": "cp -r src/jsp/* build/ && cp -r src/assets build/"
   },
@@ -16,11 +16,14 @@
   "dependencies": {
     "autoprefixer": "^10.4.21",
     "nodemon": "^3.0.2",
-    "postcss": "^8.5.6",
-    "tailwindcss": "^4.1.16"
+    "postcss": "^8.5.6"
   },
   "devDependencies": {
     "@tailwindcss/cli": "^4.1.16",
-    "concurrently": "^9.2.1"
+    "concurrently": "^9.2.1",
+    "cssnano": "^7.1.1",
+    "postcss-cli": "^11.0.1",
+    "postcss-import": "^16.1.1",
+    "tailwindcss": "^3.4.18"
   }
 }

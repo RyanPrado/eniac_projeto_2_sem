@@ -5,8 +5,8 @@
                 <a href="index.jsp" class="text-gray-800 text-lg font-bold">MONTE SINAI</a>
                 <div class="hidden md:block">
                     <ul class="flex space-x-2">
-                        <li><a href="index.jsp" class="text-gray-800 hover:bg-gray-200 py-1.5 px-2 rounded">Inicio</a></li>
-                        <li><a href="javascript:void(0)" class="text-gray-800 hover:bg-gray-200 py-1.5 px-2 rounded">Sobre</a></li>
+                        <li><a href="index.jsp" class="text-gray-800 hover:bg-gray-100 py-1.5 px-2 rounded">Inicio</a></li>
+                        <%-- <li><a href="javascript:void(0)" class="text-gray-800 hover:bg-gray-100 py-1.5 px-2 rounded">Sobre</a></li> --%>
                     </ul>
                 </div>
             </div>

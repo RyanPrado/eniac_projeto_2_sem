@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%
-    String PAGE_TITLE = "Home Page";
+    String PAGE_TITLE = "Fale Conosco - MONTE SINAI";
 %>
 
 <!DOCTYPE html>
@@ -11,8 +11,11 @@
 
   <body>
     <%@ include file="components/header.jsp" %>
-    <div class="container mx-auto mt-8">
-      <h1 class="text-3xl font-bold">CONTATO</h1>
-    </div>
+    <main class="min-h-screen">
+        <div class="container mx-auto mt-2 lg:mt-8 px-8">
+            <%@ include file="components/contact/contact_form.jsp" %>
+        </div>
+    </main>
+    <%@ include file="components/footer.jsp" %>
   </body>
 </html>

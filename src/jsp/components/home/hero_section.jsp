@@ -6,7 +6,7 @@
         </h1>
         <br/>
         <p class="text-lg sm:text-xl">Dolor ut laborum excepteur officia anim tempor nisi reprehenderit irure consectetur voluptate. Id commodo mollit aliqua adipisicing qui enim sunt. Adipisicing exercitation non sint occaecat velit. Aliquip incididunt pariatur officia sunt proident amet magna commodo tempor voluptate elit. Cupidatat aliqua aliquip non consequat.</p>
-        <div class="mt-6">
+        <div class="flex mt-6 mb-6 w-full justify-center lg:justify-normal">
             <a href="contact.jsp" class="bg-blue-600 text-white px-6 py-3 rounded-full shadow-md hover:bg-blue-700 transition duration-300">
                 Contate-nos
             </a>
@@ -15,8 +15,4 @@
     <div>
         <img src="assets/hero_image.jpg" alt="Hero Image" class="mx-auto rounded-lg shadow-lg"/>
     </div>
-</section>
-<hr class="my-2 border-t border-gray-200"/>
-<section>
-    <h2 class="text-2xl font-semibold text-left text-balance">Nossos Serviços</h2>
 </section>
