@@ -21,7 +21,7 @@ export default {
     [
       "@semantic-release/github",
       {
-        assets: ["build/**"],
+        assets: ["eniac-projeto-build.zip"],
       },
     ],
   ],

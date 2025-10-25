@@ -30,6 +30,11 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Package build
+        run: |
+          cd build
+          zip -r ../eniac-projeto-build.zip .
+
       - name: Release
         id: release
         env:
