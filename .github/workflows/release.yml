@@ -24,9 +24,6 @@ jobs:
           node-version: "24.10.0"
           cache: "npm"
 
-      - name: Setup GitHub CLI
-        uses: actions/setup-gh@v1
-
       - name: Install dependencies
         run: npm ci
 
