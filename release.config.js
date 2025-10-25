@@ -2,7 +2,15 @@ export default {
   branches: ["main"],
   repositoryUrl: "https://github.com/RyanPrado/eniac_projeto_2_sem.git",
   plugins: [
-    "@semantic-release/commit-analyzer",
+    [
+      "@semantic-release/commit-analyzer",
+      {
+        releaseRules: [
+          { type: "feat", release: "patch" },
+          { type: "fix", release: "minor" },
+        ],
+      },
+    ],
     "@semantic-release/release-notes-generator",
     [
       "@semantic-release/changelog",
