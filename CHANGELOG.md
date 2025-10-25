@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/RyanPrado/eniac_projeto_2_sem/compare/v1.0.0...v1.0.1) (2025-10-25)
+
+
+### Bug Fixes
+
+* Correct release rules for semantic versioning ([#12](https://github.com/RyanPrado/eniac_projeto_2_sem/issues/12)) ([218490d](https://github.com/RyanPrado/eniac_projeto_2_sem/commit/218490dcc3d04cd67e4e894e0dc9226e5718b929))
+
 # 1.0.0 (2025-10-25)
 
 
