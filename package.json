@@ -11,7 +11,7 @@
     "tailwind:build": "NODE_ENV=production postcss ./src/css/style.css -o ./build/style.css",
     "copy:watch": "nodemon --watch src/jsp --ext jsp --exec 'npm run copy:build'",
     "copy:build": "cp -r src/jsp/* build/ && cp -r src/assets build/",
-    "release": "dotenv -- npx semantic-release"
+    "release": "npx semantic-release"
   },
   "author": "Ryan Prado",
   "license": "MIT",
