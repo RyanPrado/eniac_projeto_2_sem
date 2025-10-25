@@ -6,8 +6,8 @@ export default {
       "@semantic-release/commit-analyzer",
       {
         releaseRules: [
-          { type: "feat", release: "patch" },
-          { type: "fix", release: "minor" },
+          { type: "feat", release: "minor" },
+          { type: "fix", release: "patch" },
         ],
       },
     ],
