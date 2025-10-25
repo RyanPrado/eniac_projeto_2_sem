@@ -6,12 +6,6 @@ TODO
 
 Este projeto usa [Semantic Release](https://semantic-release.gitbook.io/) para versionamento automático e geração de releases.
 
-### Configuração Necessária
-
-Para que o semantic-release funcione corretamente com a branch `main` protegida, é necessário configurar um Personal Access Token (PAT).
-
-📚 **[Veja o guia completo de configuração](./docs/SEMANTIC_RELEASE_SETUP.md)**
-
 ### Commits Convencionais
 
 Use o padrão [Conventional Commits](https://www.conventionalcommits.org/) para suas mensagens:
