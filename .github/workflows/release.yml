@@ -8,6 +8,9 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # Grants write access to repository contents
+      pull-requests: write # Optional: for PR-related operations if needed
 
     steps:
       - name: Checkout code
