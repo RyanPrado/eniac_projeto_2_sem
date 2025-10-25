@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/RyanPrado/eniac_projeto_2_sem/compare/v1.0.1...v1.0.2) (2025-10-25)
+
+
+### Bug Fixes
+
+* Remove Testing Workflow section from README ([6cc7e79](https://github.com/RyanPrado/eniac_projeto_2_sem/commit/6cc7e7941e525d7ff6c5d32046c34b2d1a53cfc1))
+
 ## [1.0.1](https://github.com/RyanPrado/eniac_projeto_2_sem/compare/v1.0.0...v1.0.1) (2025-10-25)
 
 
