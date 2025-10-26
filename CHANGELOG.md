@@ -1,3 +1,11 @@
+## [1.0.3](https://github.com/RyanPrado/eniac_projeto_2_sem/compare/v1.0.2...v1.0.3) (2025-10-26)
+
+
+### Bug Fixes
+
+* Dockercompose port error on setup ([ebda79d](https://github.com/RyanPrado/eniac_projeto_2_sem/commit/ebda79d410fdd69877af679ad192e8d54b88b383))
+* Dockercompose port error on setup ([#18](https://github.com/RyanPrado/eniac_projeto_2_sem/issues/18)) ([f39a0bd](https://github.com/RyanPrado/eniac_projeto_2_sem/commit/f39a0bd37b3ab1875db86f78cc241aeb7efa30f4))
+
 ## [1.0.2](https://github.com/RyanPrado/eniac_projeto_2_sem/compare/v1.0.1...v1.0.2) (2025-10-25)
 
 
