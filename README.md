@@ -24,3 +24,4 @@ Use o padrão [Conventional Commits](https://www.conventionalcommits.org/) para 
 git commit -m "feat: adiciona formulário de contato"
 git commit -m "fix: corrige validação de email"
 ```
+**Contribuidores:**
