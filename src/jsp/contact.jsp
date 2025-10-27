@@ -19,4 +19,3 @@
     <%@ include file="components/footer.jsp" %>
   </body>
 </html>
-sadasdasd
