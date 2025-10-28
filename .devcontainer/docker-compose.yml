@@ -2,6 +2,8 @@ version: "3.8"
 
 services:
   app:
+    env_file:
+      - ../.env
     build:
       context: .
       dockerfile: Dockerfile
@@ -14,6 +16,8 @@ services:
       - tomcat
 
   mysql:
+    env_file:
+      - ../.env
     image: mysql:8.0
     restart: unless-stopped
     environment:  
@@ -27,6 +31,8 @@ services:
       - mysql-data:/var/lib/mysql
 
   tomcat:
+    env_file:
+      - ../.env
     image: tomcat:9-jdk11
     restart: unless-stopped
     ports:

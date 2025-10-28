@@ -4,16 +4,24 @@
   "service": "app",
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
   "forwardPorts": [8080, 3306],
-  "postCreateCommand": "npm install",
-  "extensions": [
-    "ms-vscode.vscode-java-pack",
-    "bradlc.vscode-tailwindcss",
-    "Anthropic.claude-code",
-    "eamodio.gitlens",
-    "esbenp.prettier-vscode",
-    "christian-kohler.path-intellisense",
-    "Gruntfuggly.todo-tree",
-    "bierner.github-markdown-preview",
-    "pthorsson.vscode-jsp"
-  ]
+  "postCreateCommand": "bash -lc \"chmod +x .devcontainer/scripts/setup.sh || true; bash .devcontainer/scripts/setup.sh\"",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.vscode-java-pack",
+        "bradlc.vscode-tailwindcss",
+        "Anthropic.claude-code",
+        "eamodio.gitlens",
+        "esbenp.prettier-vscode",
+        "christian-kohler.path-intellisense",
+        "Gruntfuggly.todo-tree",
+        "bierner.github-markdown-preview",
+        "pthorsson.vscode-jsp"
+      ]
+    }
+  },
+  "secrets": {
+    "SSH_PRIVATE_KEY": {},
+    "REMOTE_HOST": {}
+  }
 }
