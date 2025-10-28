@@ -59,6 +59,7 @@ if [ -n "${SSH_PRIVATE_KEY:-}" ]; then
   ssh-add "$SSH_KEY_FILE" >/dev/null
   echo "[devcontainer setup] SSH key added to ssh-agent (key: $SSH_KEY_FILE)"
 else
+  unset SSH_PRIVATE_KEY
   echo "[devcontainer setup] SSH_PRIVATE_KEY not set — skipping SSH setup"
 fi
 
