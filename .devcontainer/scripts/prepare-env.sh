@@ -20,7 +20,7 @@ if [ -f "${SOURCE_ENV}" ]; then
     log "Copied repository .env into .devcontainer/.env"
   fi
 else
-  cp "${SOURCE_ENV}" "${TARGET_ENV}"
+  cp "${EXAMPLE_ENV}" "${TARGET_ENV}"
 # Auto-generated defaults for devcontainer when no .env exists at the repository root.
 # Override by creating a .env file in the project root.
   log "Created .devcontainer/.env with default port values (8080/3306)"
