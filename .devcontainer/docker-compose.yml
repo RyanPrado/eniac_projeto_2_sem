@@ -10,6 +10,13 @@ services:
     depends_on:
       - mysql
       - tomcat
+    environment:
+      TOMCAT_PORT: "${TOMCAT_PORT:-8080}"
+      DB_PORT: "${DB_PORT:-3306}"
+      DB_ROOT_PASSWORD: "${DB_ROOT_PASSWORD:-password_root}"
+      DB_DATABASE: "${DB_DATABASE:-database}"
+      DB_USER: "${DB_USER:-user}"
+      DB_PASSWORD: "${DB_PASSWORD:-password}"
 
   mysql:
     image: mysql:8.0

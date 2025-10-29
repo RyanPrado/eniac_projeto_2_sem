@@ -1,13 +1,17 @@
 {
   "name": "Java with Tomcat and MySQL",
   "dockerComposeFile": ["docker-compose.yml"],
+  "initializeCommand": "bash -lc '.devcontainer/scripts/prepare-env.sh'",
   "service": "app",
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
   "forwardPorts": [8080, 3306],
   "mounts": [
     "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached"
   ],
-  "postCreateCommand": "bash -lc \"chmod +x .devcontainer/scripts/setup.sh || true; bash .devcontainer/scripts/setup.sh\"",
+  "postCreateCommand": {
+    "init": "bash -lc \"chmod +x .devcontainer/scripts/setup.sh || true; bash .devcontainer/scripts/setup.sh\"",
+    "dev": "npm run dev"
+  },
   "customizations": {
     "vscode": {
       "extensions": [
@@ -25,8 +29,6 @@
   },
   "secrets": {
     "SSH_PRIVATE_KEY": {},
-    "REMOTE_HOST": {},
-    "TOMCAT_PORT": {},
-    "DB_PORT": {}
+    "REMOTE_HOST": {}
   }
 }
