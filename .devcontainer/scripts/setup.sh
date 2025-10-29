@@ -16,7 +16,7 @@ fi
 # SSH private key handling (for Codespaces / secrets)
 if [ -n "${SSH_PRIVATE_KEY:-}" ]; then
   mkdir -p "$HOME/.ssh"
-  SSH_KEY_FILE="$HOME/.ssh/id_ed25519"
+  SSH_KEY_FILE="$HOME/.ssh/id_devcontainer"
   # Ensure the key is written exactly as provided
   printf "%s\n" "$SSH_PRIVATE_KEY" > "$SSH_KEY_FILE"
   chmod 600 "$SSH_KEY_FILE"
