@@ -10,7 +10,7 @@
   ],
   "postCreateCommand": {
     "init": "bash -lc \"chmod +x .devcontainer/scripts/setup.sh || true; bash .devcontainer/scripts/setup.sh\"",
-    "dev": "npm run dev"
+    "dev": "npm run build"
   },
   "customizations": {
     "vscode": {
