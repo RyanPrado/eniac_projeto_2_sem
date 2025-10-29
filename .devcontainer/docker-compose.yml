@@ -5,8 +5,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    env_file:
-      - ../.env.example
     volumes:
       - ../..:/workspaces:cached
     working_dir: /workspaces/${localWorkspaceFolderBasename}
@@ -18,13 +16,11 @@ services:
   mysql:
     image: mysql:8.0
     restart: unless-stopped
-    env_file:
-      - ../.env.example
     environment:
-      MYSQL_ROOT_PASSWORD: "${DB_ROOT_PASSWORD}"
-      MYSQL_DATABASE: "${DB_DATABASE}"
-      MYSQL_USER: "${DB_USER}"
-      MYSQL_PASSWORD: "${DB_PASSWORD}"
+      MYSQL_ROOT_PASSWORD: "${DB_ROOT_PASSWORD:-password_root}"
+      MYSQL_DATABASE: "${DB_DATABASE:-database}"
+      MYSQL_USER: "${DB_USER:-user}"
+      MYSQL_PASSWORD: "${DB_PASSWORD:-password}"
     ports:
       - "${DB_PORT:-3306}:3306"
     volumes:
@@ -33,8 +29,6 @@ services:
   tomcat:
     image: tomcat:9-jdk11
     restart: unless-stopped
-    env_file:
-      - ../.env.example
     ports:
       - "${TOMCAT_PORT:-8080}:8080"
     volumes:
