@@ -22,6 +22,8 @@
   },
   "secrets": {
     "SSH_PRIVATE_KEY": {},
-    "REMOTE_HOST": {}
+    "REMOTE_HOST": {},
+    "TOMCAT_PORT": {},
+    "DB_PORT": {}
   }
 }
