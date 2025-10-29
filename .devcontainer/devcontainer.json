@@ -4,6 +4,9 @@
   "service": "app",
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
   "forwardPorts": [8080, 3306],
+  "mounts": [
+    "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached"
+  ],
   "postCreateCommand": "bash -lc \"chmod +x .devcontainer/scripts/setup.sh || true; bash .devcontainer/scripts/setup.sh\"",
   "customizations": {
     "vscode": {
