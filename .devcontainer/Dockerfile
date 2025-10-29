@@ -2,10 +2,10 @@ FROM mcr.microsoft.com/devcontainers/java:11
 
 # Instalar ferramentas adicionais se necessário
 RUN apt-get update && apt-get install -y \
-    curl \
-    nodejs \
-    npm \
-    && rm -rf /var/lib/apt/lists/*
+  curl \
+  nodejs \
+  npm \
+  && rm -rf /var/lib/apt/lists/*
 
 
 # Configurar o ambiente Java
@@ -17,31 +17,3 @@ ENV DB_HOST=localhost
 ENV DB_PORT=3306
 ENV DB_USERNAME=devcontainer
 ENV DB_PASSWORD=devcontainer_password
-
-RUN <<EOF
-# SSH private key handling (for Codespaces / secrets)
-if [ -n "${REMOTE_HOST:-}" ]; then
-  echo "[devcontainer setup] REMOTE_HOST is set to '$REMOTE_HOST' — adding host key to known_hosts"
-  mkdir -p "$HOME/.ssh"
-  # Try to fetch host key and append to known_hosts (silence ssh-keyscan errors)
-  if ssh-keyscan -H "$REMOTE_HOST" >> "$HOME/.ssh/known_hosts" 2>/dev/null; then
-    chmod 644 "$HOME/.ssh/known_hosts" || true
-  fi
-fi
-
-# SSH private key handling (for Codespaces / secrets)
-if [ -n "${SSH_PRIVATE_KEY:-}" ]; then
-  mkdir -p "$HOME/.ssh"
-  SSH_KEY_FILE="$HOME/.ssh/id_rsa_codespace"
-  # Ensure the key is written exactly as provided
-  printf "%s\n" "$SSH_PRIVATE_KEY" > "$SSH_KEY_FILE"
-  chmod 600 "$SSH_KEY_FILE"
-
-  # Start ssh-agent and add key
-  # eval the output so the agent env is exported into the current shell
-  eval "$(ssh-agent -s)" >/dev/null
-  ssh-add "$SSH_KEY_FILE" >/dev/null
-else
-  unset SSH_PRIVATE_KEY
-fi
-EOF
