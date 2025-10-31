@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 set -euo pipefail
 
 echo "[devcontainer setup] Starting setup.sh"
@@ -35,6 +36,20 @@ if command -v npm >/dev/null 2>&1; then
   npm install
 else
   echo "[devcontainer setup] npm not found, skipping npm install"
+fi
+
+# Run prepare-ansible.sh if present
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")" && pwd)"
+prepare_script="$script_dir/prepare-ansible.sh"
+
+if [ -f "$prepare_script" ]; then
+  echo "[devcontainer setup] Running prepare-ansible.sh..."
+  if [ ! -x "$prepare_script" ]; then
+    chmod +x "$prepare_script" || true
+  fi
+  bash "$prepare_script"
+else
+  echo "[devcontainer setup] prepare-ansible.sh not found at '$prepare_script', skipping"
 fi
 
 echo "[devcontainer setup] setup.sh finished"
