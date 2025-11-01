@@ -2,3 +2,8 @@ public/
 node_modules/
 build/
 .env
+
+.obsidian/themes
+.obsidian/plugins
+.obsidian/appearance.json
+.obsidian/workspace.json
