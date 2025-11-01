@@ -1,0 +1,138 @@
+---
+- name: Update web servers
+  hosts: webservers
+
+  tasks:
+    - name: Ensure Java is installed
+      ansible.builtin.apt:
+        name: default-jdk
+        state: present
+        update_cache: yes
+
+    - name: Ensure tomcat group exists
+      become: yes
+      ansible.builtin.group:
+        name: tomcat
+        state: present
+
+    - name: Ensure tomcat user exists
+      become: yes
+      ansible.builtin.user:
+        name: tomcat
+        group: tomcat
+        system: yes
+        shell: /bin/false
+        create_home: no
+        state: present
+
+    - name: Ensure /opt/tomcat directory exists
+      become: yes
+      ansible.builtin.file:
+        path: /opt/tomcat
+        state: directory
+        owner: tomcat
+        group: tomcat
+        mode: "0755"
+
+    - name: Download Tomcat 9.0.111 tarball to /tmp
+      become: yes
+      ansible.builtin.get_url:
+        url: https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.111/bin/apache-tomcat-9.0.111.tar.gz
+        dest: /tmp/apache-tomcat-9.0.111.tar.gz
+        mode: "0644"
+        force: yes
+
+    - name: Extract Tomcat tarball to /opt/tomcat
+      become: yes
+      ansible.builtin.unarchive:
+        src: /tmp/apache-tomcat-9.0.111.tar.gz
+        dest: /opt/tomcat
+        remote_src: yes
+        extra_opts: ["--strip-components=1"]
+        owner: tomcat
+        group: tomcat
+        mode: "0755"
+
+    - name: Ensure Tomcat bin scripts are executable and owned by tomcat
+      become: yes
+      ansible.builtin.file:
+        path: /opt/tomcat/bin
+        recurse: yes
+        owner: tomcat
+        group: tomcat
+        mode: "0755"
+
+    - name: Copy tomcat service file
+      become: yes
+      ansible.builtin.copy:
+        src: ../tomcat.service
+        dest: /etc/systemd/system/tomcat.service
+        mode: "0644"
+
+    - name: Reload systemd daemon
+      become: yes
+      ansible.builtin.systemd:
+        daemon_reload: yes
+
+    - name: Ensure Tomcat service is enabled and started
+      become: yes
+      ansible.builtin.service:
+        name: tomcat
+        state: started
+        enabled: yes
+
+- name: Update db servers
+  hosts: databases
+  vars:
+    MYSQL_ROOT_PASSWORD: "{{ lookup('env', 'DB_ROOT_PASSWORD') }}"
+    MYSQL_DATABASE: "{{ lookup('env', 'DB_DATABASE') }}"
+    MYSQL_USER: "{{ lookup('env', 'DB_USER') }}"
+    MYSQL_PASSWORD: "{{ lookup('env', 'DB_PASSWORD') }}"
+  tasks:
+    - name: Ensure mysql-server is at the latest version
+      ansible.builtin.apt:
+        name: mariadb-server
+        state: latest
+        update_cache: yes
+
+    - name: Ensure that mysql-server is started and enabled
+      become: yes
+      ansible.builtin.service:
+        name: mariadb
+        state: started
+        enabled: yes
+
+    - name: Install Python MySQL client
+      ansible.builtin.apt:
+        name: python3-pymysql
+        state: present
+
+    - name: Set the root password
+      become: yes
+      ansible.builtin.mysql_user:
+        name: root
+        host: localhost
+        login_user: root
+        login_password: "{{ MYSQL_ROOT_PASSWORD }}"
+        login_unix_socket: /run/mysqld/mysqld.sock
+        check_implicit_admin: yes
+
+    - name: Ensure the application database is present
+      become: yes
+      ansible.builtin.mysql_db:
+        name: "{{ MYSQL_DATABASE }}"
+        state: present
+        login_user: root
+        login_password: "{{ MYSQL_ROOT_PASSWORD }}"
+        login_unix_socket: /run/mysqld/mysqld.sock
+
+    - name: Ensure the application database user is present
+      become: yes
+      ansible.builtin.mysql_user:
+        name: "{{ MYSQL_USER }}"
+        host: localhost
+        password: "{{ MYSQL_PASSWORD }}"
+        login_user: root
+        login_password: "{{ MYSQL_ROOT_PASSWORD }}"
+        login_unix_socket: /run/mysqld/mysqld.sock
+        check_implicit_admin: yes
