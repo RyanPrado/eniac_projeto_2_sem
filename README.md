@@ -6,7 +6,7 @@ TODO
 
 Este projeto usa [Semantic Release](https://semantic-release.gitbook.io/) para versionamento automático e geração de releases.
 
-### Commits Convencionais
+### [Commits Convencionais](./docs/COMMIT_EXAMPLES)
 
 Use o padrão [Conventional Commits](https://www.conventionalcommits.org/) para suas mensagens:
 
@@ -24,3 +24,5 @@ Use o padrão [Conventional Commits](https://www.conventionalcommits.org/) para 
 git commit -m "feat: adiciona formulário de contato"
 git commit -m "fix: corrige validação de email"
 ```
+
+### [ChangeLog](./CHANGELOG)
