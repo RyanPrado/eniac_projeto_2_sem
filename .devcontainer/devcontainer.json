@@ -23,12 +23,9 @@
         "christian-kohler.path-intellisense",
         "Gruntfuggly.todo-tree",
         "bierner.github-markdown-preview",
-        "samuel-weinhardt.vscode-jsp-lang"
+        "samuel-weinhardt.vscode-jsp-lang",
+        "redhat.ansible"
       ]
     }
-  },
-  "secrets": {
-    "SSH_PRIVATE_KEY": {},
-    "REMOTE_HOST": {}
   }
 }

@@ -5,11 +5,11 @@ set -euo pipefail
 echo "[devcontainer setup] Starting setup.sh"
 
 # SSH private key handling (for Codespaces / secrets)
-if [ -n "${REMOTE_HOST:-}" ]; then
-  echo "[devcontainer setup] REMOTE_HOST is set to '$REMOTE_HOST' — adding host key to known_hosts"
+if [ -n "${REMOTE_HOST_TOMCAT:-}" ]; then
+  echo "[devcontainer setup] REMOTE_HOST_TOMCAT is set to '$REMOTE_HOST_TOMCAT' — adding host key to known_hosts"
   mkdir -p "$HOME/.ssh"
   # Try to fetch host key and append to known_hosts (silence ssh-keyscan errors)
-  if ssh-keyscan -H "$REMOTE_HOST" >> "$HOME/.ssh/known_hosts" 2>/dev/null; then
+  if ssh-keyscan -H "$REMOTE_HOST_TOMCAT" >> "$HOME/.ssh/known_hosts" 2>/dev/null; then
     chmod 644 "$HOME/.ssh/known_hosts" || true
   fi
 fi
