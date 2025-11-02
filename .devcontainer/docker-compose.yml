@@ -33,7 +33,7 @@ services:
     ports:
       - "${TOMCAT_PORT:-8080}:8080"
     volumes:
-      - ../build:/usr/local/tomcat/webapps
+      - ../build:/usr/local/tomcat/webapps:cached
     depends_on:
       - mysql
 
