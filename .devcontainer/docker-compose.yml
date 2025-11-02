@@ -27,7 +27,7 @@ services:
       - mysql-data:/var/lib/mysql
 
   tomcat:
-    image: tomcat:9-jdk11
+    image: tomcat:10-jdk11
     restart: unless-stopped
     ports:
       - "${TOMCAT_PORT:-8080}:8080"
