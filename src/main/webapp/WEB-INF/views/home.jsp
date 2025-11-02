@@ -7,7 +7,7 @@
 </head>
 <body>
     <header>
-        <h1>calção 5</h1>
+        <h1>Home</h1>
         
         <nav>
             <a href="${pageContext.request.contextPath}/">Home</a>
