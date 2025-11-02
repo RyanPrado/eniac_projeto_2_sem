@@ -1,6 +1,7 @@
 public/
 node_modules/
 build/
+target/
 .env
 
 .obsidian/themes
@@ -10,3 +11,5 @@ build/
 .devcontainer/.env
 
 inventory.ini
+
+*.log

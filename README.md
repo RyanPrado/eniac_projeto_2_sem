@@ -1,26 +1,21 @@
 # Eniac Projeto Integrador 2º Semestre
 
-TODO 2
+Ambiente exemplo com arquitetura MVC usando Servlets e JSP para Tomcat 10 (Jakarta EE 9) em Java 11.
 
-## 🚀 Semantic Release
+## 🧱 Estrutura
 
-Este projeto usa [Semantic Release](https://semantic-release.gitbook.io/) para versionamento automático e geração de releases.
+- `pom.xml` – configuração Maven com empacotamento WAR
+- `src/main/java` – camadas `controller`, `service` e `model`
+- `src/main/webapp` – JSPs e assets estáticos
 
-### Commits Convencionais
+## ▶️ Como executar localmente
 
-Use o padrão [Conventional Commits](https://www.conventionalcommits.org/) para suas mensagens:
+1. Garanta o Java 11 instalado (JDK).
+2. Rode `mvn clean package` para gerar o artefato WAR.
+3. Copie `target/eniac-projeto.war` para o `webapps/` do Tomcat 10 ou configure um contexto.
 
-- `feat:` - Nova funcionalidade (gera versão minor)
-- `fix:` - Correção de bug (gera versão patch)
-- `docs:` - Mudanças na documentação
-- `style:` - Formatação de código
-- `refactor:` - Refatoração de código
-- `test:` - Adição ou correção de testes
-- `chore:` - Tarefas de manutenção
+O servlet principal responde a `/` e encaminha para a view `WEB-INF/views/home.jsp`, exibindo dados fictícios por meio de um serviço de exemplo.
 
-**Exemplo:**
+## 🤝 Contribuição
 
-```bash
-git commit -m "feat: adiciona formulário de contato"
-git commit -m "fix: corrige validação de email"
-```
+Utilize commits padronizados (Conventional Commits) para manter o histórico organizado.

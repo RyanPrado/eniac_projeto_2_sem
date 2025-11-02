@@ -1,36 +1,29 @@
 {
-  "name": "eniac_projeto_2_sem",
+  "name": "eniac-projeto",
   "version": "1.0.0",
   "description": "Projeto para a faculdade ENIAC 2º Semestre",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "concurrently \"npm run tailwind:watch\" \"npm run copy:watch\"",
-    "build": "npm run tailwind:build && npm run copy:build",
-    "tailwind:watch": "postcss ./src/css/style.css -o ./build/style.css --watch",
-    "tailwind:build": "NODE_ENV=production postcss ./src/css/style.css -o ./build/style.css",
-    "copy:watch": "nodemon --watch src/jsp --ext jsp --exec 'npm run copy:build'",
-    "copy:build": "cp -r src/jsp/* build/ && cp -r src/assets build/",
-    "release": "npx semantic-release"
+    "release": "npx semantic-release",
+    "build:clear": "rm -rf build/ROOT",
+    "build:copy": "cp -r target/${npm_package_name}/ build/ROOT",
+    "build": "mvn -q clean package && npm run build:clear && npm run build:copy",
+    "dev:mvn": "mvn -q compile package && npm run build:clear && npm run build:copy",
+    "dev": "concurrently \"npx dotenv -e .env -- nodemon --watch src --ext java,html,css,js,jsp --exec 'npm run dev:mvn'\""
   },
   "author": "Ryan Prado",
   "license": "MIT",
   "dependencies": {
     "autoprefixer": "^10.4.21",
-    "nodemon": "^3.0.2",
-    "postcss": "^8.5.6"
+    "nodemon": "^3.0.2"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/github": "^12.0.0",
-    "@tailwindcss/cli": "^4.1.16",
     "concurrently": "^9.2.1",
-    "cssnano": "^7.1.1",
     "dotenv-cli": "^10.0.0",
-    "postcss-cli": "^11.0.1",
-    "postcss-import": "^16.1.1",
-    "semantic-release": "^25.0.1",
-    "tailwindcss": "^3.4.18"
+    "semantic-release": "^25.0.1"
   }
 }
