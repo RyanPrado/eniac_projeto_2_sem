@@ -12,6 +12,10 @@ log() {
   printf '[devcontainer initialize] %s\n' "$1"
 }
 
+# Ensure build directory exists for bind mount
+mkdir -p "${REPO_ROOT}/build"
+log "Ensured target directory exists at ${REPO_ROOT}/build"
+
 if [ -f "${SOURCE_ENV}" ]; then
   if cmp -s "${SOURCE_ENV}" "${TARGET_ENV}" 2>/dev/null; then
     log ".devcontainer/.env already matches repository .env"

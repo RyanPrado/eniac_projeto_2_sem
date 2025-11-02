@@ -13,6 +13,15 @@ $SourceEnv = Join-Path -Path $RepoRoot -ChildPath '.env'
 $ExampleEnv = Join-Path -Path $RepoRoot -ChildPath '.env.example'
 $TargetEnv = Join-Path -Path $DevcontainerDir -ChildPath '.env'
 
+# Ensure build directory exists for bind mount
+$BuildDir = Join-Path -Path $RepoRoot -ChildPath 'build'
+if (-not (Test-Path -Path $BuildDir)) {
+    New-Item -ItemType Directory -Path $BuildDir -Force | Out-Null
+    Log "Created build directory at $BuildDir"
+} else {
+    Log "Build directory already exists at $BuildDir"
+}
+
 if (Test-Path -Path $SourceEnv) {
     $matchesExisting = $false
     if (Test-Path -Path $TargetEnv) {

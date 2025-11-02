@@ -10,7 +10,7 @@
   ],
   "postCreateCommand": {
     "init": "bash -lc \"chmod +x .devcontainer/scripts/setup.sh || true; bash .devcontainer/scripts/setup.sh\"",
-    "dev": "npm run build"
+    "build": "npm install && npm run build"
   },
   "features": {
     "ghcr.io/devcontainers/features/sshd:1": {
@@ -30,7 +30,8 @@
         "Gruntfuggly.todo-tree",
         "bierner.github-markdown-preview",
         "samuel-weinhardt.vscode-jsp-lang",
-        "redhat.ansible"
+        "redhat.ansible",
+        "vscjava.vscode-maven"
       ]
     }
   }

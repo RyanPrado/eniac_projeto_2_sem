@@ -30,12 +30,14 @@ else
   unset SSH_PRIVATE_KEY
 fi
 
-# Run npm install if available
-if command -v npm >/dev/null 2>&1; then
-  echo "[devcontainer setup] Running npm install..."
-  npm install
+# Build Maven project to materialize the exploded WAR for Tomcat
+if command -v mvn >/dev/null 2>&1; then
+  echo "[devcontainer setup] Running mvn clean package (skip tests)..."
+  if ! mvn -q clean package -DskipTests; then
+    echo "[devcontainer setup] Maven build failed; Tomcat ROOT will remain empty until build succeeds"
+  fi
 else
-  echo "[devcontainer setup] npm not found, skipping npm install"
+  echo "[devcontainer setup] mvn not found, skipping Maven build"
 fi
 
 # Run prepare-ansible.sh if present
