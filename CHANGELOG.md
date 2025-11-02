@@ -1,3 +1,11 @@
+## [1.0.4](https://github.com/RyanPrado/eniac_projeto_2_sem/compare/v1.0.3...v1.0.4) (2025-11-02)
+
+
+### Bug Fixes
+
+* Clean README.md ([7e54e20](https://github.com/RyanPrado/eniac_projeto_2_sem/commit/7e54e20c31dd374d02670c9af98e82115d0d715c))
+* Clean README.md ([#30](https://github.com/RyanPrado/eniac_projeto_2_sem/issues/30)) ([388f647](https://github.com/RyanPrado/eniac_projeto_2_sem/commit/388f6472e8d1b7e18589d08a2a1357e6bb0efe01))
+
 ## [1.0.3](https://github.com/RyanPrado/eniac_projeto_2_sem/compare/v1.0.2...v1.0.3) (2025-10-26)
 
 
