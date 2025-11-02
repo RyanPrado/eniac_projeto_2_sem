@@ -1,3 +1,11 @@
+# [1.1.0](https://github.com/RyanPrado/eniac_projeto_2_sem/compare/v1.0.4...v1.1.0) (2025-11-02)
+
+
+### Features
+
+* Make to ableJSP files include JSTL tag libs on default & add we… ([#31](https://github.com/RyanPrado/eniac_projeto_2_sem/issues/31)) ([191dbb9](https://github.com/RyanPrado/eniac_projeto_2_sem/commit/191dbb9021de7bd9389448e83f04350db54abba7))
+* Make to ableJSP files include JSTL tag libs on default & add web.xml to informe tomcat server to compile all files .jsp with JSTL lib ([080f3a3](https://github.com/RyanPrado/eniac_projeto_2_sem/commit/080f3a3578a0a20d9829ae5b789a485adbfbd74f))
+
 ## [1.0.4](https://github.com/RyanPrado/eniac_projeto_2_sem/compare/v1.0.3...v1.0.4) (2025-11-02)
 
 
