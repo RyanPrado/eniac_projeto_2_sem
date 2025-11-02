@@ -1,7 +1,7 @@
 {
   "name": "Java with Tomcat and MySQL",
   "dockerComposeFile": ["docker-compose.yml"],
-  "initializeCommand": "bash -lc '.devcontainer/scripts/prepare-env.sh'",
+  "initializeCommand": "bash -lc \".devcontainer/scripts/prepare-env.sh\" || powershell -NoLogo -NoProfile -ExecutionPolicy Bypass -File \".devcontainer\\scripts\\prepare-env.ps1\"",
   "service": "app",
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
   "forwardPorts": [8080, 3306],
@@ -11,6 +11,12 @@
   "postCreateCommand": {
     "init": "bash -lc \"chmod +x .devcontainer/scripts/setup.sh || true; bash .devcontainer/scripts/setup.sh\"",
     "dev": "npm run build"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/sshd:1": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/github-cli:1": {}
   },
   "customizations": {
     "vscode": {
