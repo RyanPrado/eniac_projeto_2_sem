@@ -1,3 +1,11 @@
+# [1.2.0](https://github.com/RyanPrado/eniac_projeto_2_sem/compare/v1.1.0...v1.2.0) (2025-11-04)
+
+
+### Features
+
+* restructure JSP pages and components, update CSS imports, and e… ([#32](https://github.com/RyanPrado/eniac_projeto_2_sem/issues/32)) ([6a4caf4](https://github.com/RyanPrado/eniac_projeto_2_sem/commit/6a4caf4b64c395305151d69b3606081f0ab984d6))
+* restructure JSP pages and components, update CSS imports, and enhance logging ([93d5ccc](https://github.com/RyanPrado/eniac_projeto_2_sem/commit/93d5cccb136b379f18366192be60635fcfc5084d))
+
 # [1.1.0](https://github.com/RyanPrado/eniac_projeto_2_sem/compare/v1.0.4...v1.1.0) (2025-11-02)
 
 
