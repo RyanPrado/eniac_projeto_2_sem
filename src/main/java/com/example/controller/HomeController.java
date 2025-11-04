@@ -21,6 +21,6 @@ public class HomeController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setAttribute("courses", courseService.findFeaturedCourses());
-        req.getRequestDispatcher("/WEB-INF/views/home.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/pages/home.jsp").forward(req, resp);
     }
 }

@@ -16,6 +16,6 @@ public class ContactController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/contact.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/pages/contact.jsp").forward(req, resp);
     }
 }
