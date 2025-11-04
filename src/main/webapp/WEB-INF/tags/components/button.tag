@@ -1,0 +1,11 @@
+<%@ include file="/WEB-INF/jspf/global-taglibs.jsp" %>
+<%@ attribute name="label" required="true" %>
+<%@ attribute name="severity" required="false" type="java.lang.String" %>
+<%@ tag dynamic-attributes="dynamicAttrs" pageEncoding="UTF-8" %>
+<c:set var="classValue" value="<%= severity != null ? \" btn-\" + severity : \"\" %>" />
+<c:if test="${not empty dynamicAttrs['class']}">
+    <c:set var="classValue" value="${classValue} ${dynamicAttrs['class']}" />
+</c:if>
+<button <c:forEach var="entry" items="${dynamicAttrs}"><c:if test="${entry.key != 'class'}">${entry.key}="${entry.value}" </c:if></c:forEach> class="${classValue}">
+    ${label}
+</button>

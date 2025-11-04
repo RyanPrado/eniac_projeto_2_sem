@@ -3,3 +3,4 @@
   e será incluído automaticamente em todas as páginas .jsp.
 --%>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="components" tagdir="/WEB-INF/tags/components" %>

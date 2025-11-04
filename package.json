@@ -8,9 +8,9 @@
     "release": "npx semantic-release",
     "build:clear": "rm -rf build/ROOT",
     "build:copy": "cp -r target/${npm_package_name}/ build/ROOT",
-    "build": "mvn -q clean package && npm run build:clear && npm run build:copy",
-    "dev:mvn": "mvn -q compile package && npm run build:clear && npm run build:copy",
-    "dev": "concurrently \"npx dotenv -e .env -- nodemon --watch src --ext java,html,css,js,jsp --exec 'npm run dev:mvn'\""
+    "build": "MAVEN_OPTS=\"-XX:ErrorFile=logs/maven/hs_err_pid%p.log\" mvn -q clean package && npm run build:clear && npm run build:copy",
+    "dev:mvn": "MAVEN_OPTS=\"-XX:ErrorFile=logs/maven/hs_err_pid%p.log\" mvn -q compile war:exploded && npm run build:clear && npm run build:copy",
+    "dev": "concurrently \"npx dotenv -e .env -- nodemon --watch src --ext java,html,css,js,jsp,tag,xml --exec 'npm run dev:mvn'\""
   },
   "author": "Ryan Prado",
   "license": "MIT",
