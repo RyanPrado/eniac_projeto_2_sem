@@ -1,3 +1,11 @@
+# [1.3.0](https://github.com/RyanPrado/eniac_projeto_2_sem/compare/v1.2.0...v1.3.0) (2025-11-06)
+
+
+### Features
+
+* add LocalizationController and JSP for localization page; updat… ([#33](https://github.com/RyanPrado/eniac_projeto_2_sem/issues/33)) ([5acfec9](https://github.com/RyanPrado/eniac_projeto_2_sem/commit/5acfec9bf15407faeabe74e4edb93978adaec4f4))
+* add LocalizationController and JSP for localization page; update button and header tags ([6470c37](https://github.com/RyanPrado/eniac_projeto_2_sem/commit/6470c378d7cbe276ef5ae9fada3a1d1cc3d9d3c7))
+
 # [1.2.0](https://github.com/RyanPrado/eniac_projeto_2_sem/compare/v1.1.0...v1.2.0) (2025-11-04)
 
 
