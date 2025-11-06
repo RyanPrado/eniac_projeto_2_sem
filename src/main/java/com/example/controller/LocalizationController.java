@@ -9,13 +9,13 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Handles requests for the about page.
+ * Handles requests for the localization page.
  */
-@WebServlet(name = "AboutController", urlPatterns = "/about")
-public class AboutController extends HttpServlet {
+@WebServlet(name = "LocalizationController", urlPatterns = "/localization")
+public class LocalizationController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/pages/about.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/pages/localization.jsp").forward(req, resp);
     }
 }
