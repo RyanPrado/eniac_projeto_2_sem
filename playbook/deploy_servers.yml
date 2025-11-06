@@ -4,10 +4,31 @@
 
   tasks:
     - name: Ensure Java is installed
-      ansible.builtin.apt:
-        name: default-jdk
+      become: yes
+      ansible.builtin.dnf:
+        name: jdk-11-headless.x86_64
         state: present
         update_cache: yes
+
+    - name: Allow SSH (port 22) in firewalld
+      become: yes
+      ansible.posix.firewalld:
+        port: 22/tcp
+        permanent: yes
+        state: enabled
+
+    - name: Allow Tomcat (port 8080) in firewalld
+      become: yes
+      ansible.posix.firewalld:
+        port: 8080/tcp
+        permanent: yes
+        state: enabled
+
+    - name: Reload firewalld to apply changes
+      become: yes
+      ansible.builtin.service:
+        name: firewalld
+        state: reloaded
 
     - name: Ensure tomcat group exists
       become: yes
@@ -81,6 +102,8 @@
         state: started
         enabled: yes
 
+
+
 - name: Update db servers
   hosts: databases
   vars:
@@ -90,7 +113,7 @@
     MYSQL_PASSWORD: "{{ lookup('env', 'DB_PASSWORD') }}"
   tasks:
     - name: Ensure mysql-server is at the latest version
-      ansible.builtin.apt:
+      ansible.builtin.dnf:
         name: mariadb-server
         state: latest
         update_cache: yes

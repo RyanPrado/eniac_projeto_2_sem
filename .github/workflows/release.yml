@@ -50,3 +50,31 @@ jobs:
           GIT_COMMITTER_NAME: semantic-release-bot
           GIT_COMMITTER_EMAIL: semantic-release-bot@github.com
         run: npx semantic-release
+
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Download Release Asset
+        uses: actions/download-release-asset@v2
+        with:
+          repository: ${{ github.repository }}
+          tag: ${{ github.ref_name }}
+          asset_name: eniac-projeto.war
+          github_token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+      - name: Clear Remote Directory
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.REMOTE_HOST }}
+          username: ${{ secrets.REMOTE_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: rm -rf ${{ secrets.REMOTE_PATH }}/eniac-projeto/*
+      - name: Deploy to Server
+        uses: easingthemes/ssh-deploy@v2.1.5
+        with:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          ARGS: "-avz --delete"
+          SOURCE: "eniac-projeto.war"
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+          REMOTE_USER: ${{ secrets.REMOTE_USER }}
+          REMOTE_PATH: ${{ secrets.REMOTE_PATH }}
