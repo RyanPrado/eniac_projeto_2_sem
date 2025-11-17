@@ -1,39 +1,43 @@
 package com.sinai.config.context;
 
+import com.sinai.config.db.DatabaseConnection;
 import com.sinai.config.env.EnvLoad;
+import javax.sql.DataSource;
 
-import javax.naming.InitialContext;
-
+import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletContextEvent;
 import jakarta.servlet.ServletContextListener;
 import jakarta.servlet.annotation.WebListener;
 
 @WebListener
 public class Context implements ServletContextListener {
+
+  public Context() throws ClassNotFoundException {
+
+   try {
+    Class.forName("com.mysql.cj.jdbc.Driver");
+   } catch (ClassNotFoundException e) {
+    e.getStackTrace();
+    throw new ClassCastException("Erro ao carregar o Driver JDBC");
+   }
+
+  }
   
   @Override
-  public void contextInitialized(ServletContextEvent contextEvent) {
+  public void contextInitialized(ServletContextEvent contextConfig) {
     new EnvLoad();
-    
+    DatabaseConnection db = new DatabaseConnection();
     
     try {
-      InitialContext contextInit = new InitialContext();
+      ServletContext context = contextConfig.getServletContext();
+      DataSource connectionDataSource = db.getConnectionDataSource();
 
-    } catch (Exception e) {
-      e.getStackTrace();
+      context.setAttribute("DB_CONNECTION", connectionDataSource);
       
-      System.out.println("Erro ao iniciar o contexto");
-    }
-  }
-
-  static {
-    System.out.println("Entrou no estático");
-    try {
-      Class.forName("com.mysql.cj.jdbc.Driver");
     } catch (Exception e) {
       e.getStackTrace();
 
-      System.out.println("Driver do JDBC não encontrado!");
+      System.out.println("Erro ao criar o contexto: " + e.getMessage());
     }
   }
 }
