@@ -24,8 +24,7 @@ import com.sinai.service.CourseService;
 public class HomeController extends HttpServlet {
 
     private final CourseService courseService = new CourseService();
-    DataSource contextData;
-
+    private DataSource connectionDataSource;
 
     @Override
     public void init(ServletConfig config) throws ServletException {
@@ -33,7 +32,7 @@ public class HomeController extends HttpServlet {
 
         try {
             ServletContext context = config.getServletContext();
-            this.contextData = (DataSource) context.getAttribute("dbConnection");
+            this.connectionDataSource = (DataSource) context.getAttribute("DB_CONNECTION");
         } catch (Exception e) {
           System.out.println(e.getMessage());
         }
@@ -42,15 +41,13 @@ public class HomeController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String sql = "INSERT INTO registros (nome, idade) VALUES (?, ?)";
+        try (Connection connection = connectionDataSource.getConnection()) {        
 
-        try (Connection connection = contextData.getConnection()) {
-
-            PreparedStatement state = connection.prepareStatement(sql);
-            state.setString(1, "Cleiton");
-            state.setInt(2, 25);
+            PreparedStatement sqlQuery = connection.prepareStatement(sql);
+            sqlQuery.setString(1, "Cleiton");
+            sqlQuery.setInt(2, 25);
             
-            state.executeUpdate();
-                
+            sqlQuery.executeUpdate();
             } catch (Exception e) {
                 e.getStackTrace();
                 System.out.println("Erro ao executar a query: " + e.getMessage());
