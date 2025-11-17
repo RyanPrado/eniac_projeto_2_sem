@@ -10,7 +10,6 @@
 
     <name>ENIAC Projeto MVC</name>
     <description>Exemplo de aplicação MVC com Servlets e JSP para Tomcat 10 (Java 11)</description>
-
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
@@ -24,7 +23,6 @@
             <groupId>jakarta.servlet</groupId>
             <artifactId>jakarta.servlet-api</artifactId>
             <version>${jakarta.servlet.version}</version>
-            <scope>provided</scope>
         </dependency>
         
         <dependency>
@@ -38,11 +36,38 @@
             <artifactId>jakarta.servlet.jsp.jstl</artifactId>
             <version>${jakarta.jstl.version}</version>
         </dependency>
-    </dependencies>
 
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.33</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+            <version>7.0.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.github.cdimascio</groupId>
+            <artifactId>java-dotenv</artifactId>
+            <version>5.2.2</version>
+        </dependency>
+    </dependencies>
+    
     <build>
         <directory>target</directory>
         <finalName>${project.artifactId}</finalName>
+        
+        <resources>        
+            <resource>
+                <directory>${project.basedir}</directory> <includes>
+                <include>.env</include> </includes>
+            </resource>
+        </resources>
+
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
