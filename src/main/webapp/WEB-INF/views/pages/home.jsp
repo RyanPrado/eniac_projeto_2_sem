@@ -10,7 +10,7 @@
 </head>
 <body>
     <layout:header title="HOME"/>
-    <layout:main>Teste</layout:main>
+    <layout:main>Teste 2</layout:main>
     <layout:footer /> 
 </body>
 </html>
