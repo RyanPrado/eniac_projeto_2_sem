@@ -1,2 +1,20 @@
-header {
+/* header.header-main
+   - display: flex: transforma o elemento <header> em um container flexível
+   - flex-direction: column: empilha os filhos na vertical (nav acima do h1)
+*/
+header.header-main {
+    display: flex;
+    flex-direction: column; 
+}
+
+
+/* header.header-main nav
+   - width: 100%: faz o nav ocupar toda a largura do header
+   - display: flex: organiza os itens do nav em linha (flex row)
+   - justify-content: flex-end: alinha os itens do nav à direita
+*/
+header.header-main nav {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end; 
 }

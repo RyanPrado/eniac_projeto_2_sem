@@ -15,9 +15,9 @@
 
 <header class="${classValue}">
     <nav>
-        <a href="${pageContext.request.contextPath}/"><button>Home</button></a>
-        <a href="${pageContext.request.contextPath}/localization"><button>Localização</button></a>
-        <a href="${pageContext.request.contextPath}/contact"><button>Contato</button></a>
+        <a class=home_button href="${pageContext.request.contextPath}/"><button>Home</button></a>
+        <a class=localizacao_button href="${pageContext.request.contextPath}/localization"><button>Localização</button></a>
+        <a class=contato_button href="${pageContext.request.contextPath}/contact"><button>Contato</button></a>
     </nav>
     <h1>${heading}</h1>
     <!--<c:if test="${show_button}">
