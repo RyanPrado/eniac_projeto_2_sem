@@ -9,7 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/axios@1.13.1/dist/axios.min.js"></script>
 </head>
 <body>
-    <layout:header title="LOCALIZAÇÃO"/>
+    <layout:header heading="LOCALIZAÇÃO"/>
     <layout:main>
         <h2>Onde nos encontrar</h2>
         <p>R. Anselmo Fornasaro, 194 - Jardim Bom Clima, Guarulhos - SP, 07196-240</p>

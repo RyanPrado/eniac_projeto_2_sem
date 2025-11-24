@@ -9,7 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/axios@1.13.1/dist/axios.min.js"></script>
 </head>
 <body>
-    <layout:header title="CONTACT" show_button="false"/>
+    <layout:header heading="CONTACT" show_button="false"/>
     <layout:main>
         <fieldset>
             <legend>Fale Conosco</legend>
