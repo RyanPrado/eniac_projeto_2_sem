@@ -9,7 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/axios@1.13.1/dist/axios.min.js"></script>
 </head>
 <body>
-    <layout:header title="HOME"/>
+    <layout:header heading="Home"/>
     <layout:main>Teste 2</layout:main>
     <layout:footer /> 
 </body>
