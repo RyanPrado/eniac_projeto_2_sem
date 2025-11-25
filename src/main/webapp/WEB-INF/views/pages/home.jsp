@@ -15,7 +15,7 @@
     Aqui você encontrará os melhores serviços para seus entes queridos. <br/>
     Trabalhamos com dedicação e carinho para garantir o bem-estar e a felicidade de todos os nossos residentes. <br/>
     Venha nos visitar e conhecer nossas instalações. <br/>
-    <img src="${pageContext.request.contextPath}/images/foto_amigos.jpg"/>
+    <img src="${pageContext.request.contextPath}/static/images/image-placeholder.jpg"/>
     
     
     
