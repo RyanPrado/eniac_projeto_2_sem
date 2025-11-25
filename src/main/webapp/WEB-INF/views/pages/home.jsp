@@ -10,7 +10,17 @@
 </head>
 <body>
     <layout:header heading="Home"/>
-    <layout:main>Teste 2</layout:main>
+    <layout:main>
+    Seja bem-vindo a casa de repouso Monte Sinai. <br/> <br/>
+    Aqui você encontrará os melhores serviços para seus entes queridos. <br/>
+    Trabalhamos com dedicação e carinho para garantir o bem-estar e a felicidade de todos os nossos residentes. <br/>
+    Venha nos visitar e conhecer nossas instalações. <br/>
+    <img src="${pageContext.request.contextPath}/images/foto_amigos.jpg"/>
+    
+    
+    
+    
+    </layout:main>
     <layout:footer /> 
 </body>
 </html>
