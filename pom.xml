@@ -3,7 +3,7 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.example</groupId>
+    <groupId>com.sinai</groupId>
     <artifactId>eniac-projeto</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>war</packaging>
@@ -55,6 +55,19 @@
             <artifactId>java-dotenv</artifactId>
             <version>5.2.2</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+            <version>9.22.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-mysql</artifactId>
+            <version>9.22.3</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -66,6 +79,13 @@
                 <directory>${project.basedir}</directory>
                 <includes>
                     <include>.env</include>
+                </includes>
+            </resource>
+
+            <resource>
+                <directory>src/main/java/</directory>
+                <includes>
+                    <include>**/*.sql</include>
                 </includes>
             </resource>
         </resources>
