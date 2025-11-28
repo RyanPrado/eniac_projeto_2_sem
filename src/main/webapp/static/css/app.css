@@ -12,6 +12,43 @@ body {
     min-height: 100dvh;
 }
 
+body .container-imagens {
+    display: flex; /*Permite que as imagens fiquem lado a lado*/
+}
+body .imagem1 {
+    width: 350px; /*Determina o tamanho da imagem*/
+}
+body .imagem2 {
+    width: 350px; /*Determina o tamanho da imagem*/
+}
+body .imagem3 {
+    width: 383px; /*Determina o tamanho da imagem*/
+}
+body .container-imagem1 {
+    text-align: left; /*Alinha a imagem à esquerda*/
+}
+body .container-imagem2 {
+    text-align: center; /*Centraliza a imagem*/
+}
+body .container-imagem3 {
+    text-align: right; /*Alinha a imagem à direita*/
+}
+body .container-texto-das-imagens {
+    display: flex; /*Permite que os textos fiquem lado a lado*/
+}
+body .container-texto-imagem1 {
+    text-align: center; /*Alinha o texto à esquerda*/
+    width: 350px; /*Determina a largura do texto*/
+}
+body .container-texto-imagem2 {
+    text-align: center; /*Centraliza o texto*/
+    width: 350px; /*Determina a largura do texto*/
+}
+body .container-texto-imagem3 {
+    text-align: center; /*Alinha o texto à direita*/
+    width: 350px; /*Determina a largura do texto*/
+}
+
 :root {
     --primary-color: #007bff;
     --secondary-color: #6c757d;
