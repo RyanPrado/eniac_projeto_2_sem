@@ -1,4 +1,7 @@
 button {
+    transition: box-shadow 0.2s ease, transform 0.12s ease;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    cursor: pointer;
 }
 
 button.btn-primary {
@@ -9,3 +12,25 @@ button.btn-danger {
     background-color: var(--danger-color);
     color: white;
 }
+
+/* Efeito de sombra vermelha ao passar o mouse (hover) e ao focar */
+button:hover,
+button:focus {
+    box-shadow: 0 8px 20px rgba(255, 0, 25, 0.911); /* sombra vermelha usando valor hex da variável padrão */
+    transform: translateY(-1px);
+    outline: none; /* foco visual com sombra, não com outline nativo */
+}
+
+/* Versão mais intensa para botões de perigo (danger) */
+button.btn-danger:hover,
+button.btn-danger:focus {
+    box-shadow: 0 10px 30px rgba(255, 0, 25, 0.911);
+}
+
+/* Use focus-visible para melhorar acessibilidade e não remover outline de quem usa teclado */
+button:focus-visible {
+    box-shadow: 0 8px 20px rgba(255, 0, 25, 0.911);
+}
+
+/* Se preferir usar a variável de cor de perigo definida no projeto, descomente a linha abaixo */
+/* button:hover, button:focus { box-shadow: 0 8px 20px rgba(var(--danger-color-rgb), 0.28); } */

@@ -17,4 +17,38 @@ header.header-main nav {
     width: 100%;
     display: flex;
     justify-content: flex-end; 
+    background-color:aquamarine;
+}
+
+.home_button{
+    background-color: #4ca8af; 
+    color: rgb(247, 247, 247);
+    padding: 10px 20px;
+    border: none;
+    transition: box-shadow 0.2s ease, transform 0.12s ease;
+}
+.home_button:hover{
+    box-shadow: 0 8px 20px rgba(255, 0, 25, 0.911);
+    transform: translateY(-1px);
+}
+
+.localizacao_button,
+.contato_button {
+    background-color: #4ca8af; 
+    color: rgb(247, 247, 247);
+    padding: 10px 20px;
+    border: none;
+    transition: box-shadow 0.2s ease, transform 0.12s ease;
+}
+.localizacao_button:hover,
+.contato_button:hover {
+    box-shadow: 0 8px 20px rgba(255, 0, 25, 0.911);
+    transform: translateY(-1px);
+}
+
+.home_button:focus-visible,
+.localizacao_button:focus-visible,
+.contato_button:focus-visible {
+    box-shadow: 0 8px 20px rgba(255, 0, 25, 0.911);
+    outline: none;
 }
