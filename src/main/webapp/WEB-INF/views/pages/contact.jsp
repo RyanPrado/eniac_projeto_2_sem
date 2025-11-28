@@ -9,21 +9,24 @@
     <script src="https://cdn.jsdelivr.net/npm/axios@1.13.1/dist/axios.min.js"></script>
 </head>
 <body>
-    <layout:header heading="CONTACT" show_button="false"/>
+    <layout:header heading="CONTATO" show_button="false"/>
     <layout:main>
-        <fieldset>
-            <legend>Fale Conosco</legend>
-            <form name="contactForm" method="post" action="${pageContext.request.contextPath}/submitContact">
-                <label for="name">Nome:</label><br>
-                <input type="text" id="name" name="name"><br><br>
-                <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email"><br><br>
-                <label for="message">Mensagem:</label><br>
-                <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
-
-                <components:button label="Enviar" severity="primary" type="submit" />
-            </form>
-        </fieldset>
+        <div class="container-contactForm">
+            <fieldset class="contactForm">
+                <legend>Fale Conosco</legend>
+                <form name="contactForm" method="post" action="${pageContext.request.contextPath}/submitContact">
+                    <div class="internal-contactForm">
+                        <label for="name">Nome:</label><br>
+                        <input class="name-input"type="text" id="name" name="name"><br><br>
+                        <label for="email">Email:</label><br>
+                        <input class="email-input"type="email" id="email" name="email"><br><br>
+                        <label for="message">Mensagem:</label><br>
+                        <textarea class="message-input"id="message" name="message" rows="4" cols="50"></textarea><br><br>
+                        <components:button label="Enviar" severity="primary" type="submit" />
+                    </div>
+                </form>
+            </fieldset>
+        </div>
     </layout:main>
     <layout:footer /> 
 </body>
