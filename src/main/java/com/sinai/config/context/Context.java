@@ -12,17 +12,6 @@ import jakarta.servlet.annotation.WebListener;
 
 @WebListener
 public class Context implements ServletContextListener {
-
-  public Context() throws ClassNotFoundException {
-   try {
-    Class.forName("com.mysql.cj.jdbc.Driver");
-   } catch (ClassNotFoundException e) {
-    e.getStackTrace();
-    throw new ClassNotFoundException("Erro ao carregar o Driver JDBC");
-   }
-   
-  }
-  
   @Override
   public void contextInitialized(ServletContextEvent contextConfig) {
     new EnvLoad();

@@ -24,11 +24,14 @@ public class DatabaseConnection {
       throw new IllegalArgumentException("Erro ao acessar a variável de ambiente DB_PASSWORD");
     }
 
-    HikariDataSource ds = new HikariDataSource();
-    ds.setJdbcUrl(DB_URL);
-    ds.setUsername(DB_USER);
-    ds.setPassword(DB_PASSWORD);
-    this.connectionDataSource = ds;
+    HikariDataSource dataSourceConfig = new HikariDataSource();
+
+    dataSourceConfig.setDriverClassName("com.mysql.cj.jdbc.Driver");
+    dataSourceConfig.setJdbcUrl(DB_URL);
+    dataSourceConfig.setUsername(DB_USER);
+    dataSourceConfig.setPassword(DB_PASSWORD);
+
+    this.connectionDataSource = dataSourceConfig;
   }
 
   public DataSource getConnectionDataSource() throws SQLException {
