@@ -31,6 +31,11 @@ public class DatabaseConnection {
     dataSourceConfig.setUsername(DB_USER);
     dataSourceConfig.setPassword(DB_PASSWORD);
 
+    dataSourceConfig.setMaxLifetime(900000); // 15 minutos
+    dataSourceConfig.setConnectionTimeout(9000); // 90 segundos
+    dataSourceConfig.setMaximumPoolSize(5);
+    dataSourceConfig.setIdleTimeout(30000); // 5 minutos
+
     this.connectionDataSource = dataSourceConfig;
   }
 
