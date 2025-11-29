@@ -1,4 +1,4 @@
-package com.sinai.config.env;
+package com.sinai.libs.env;
 
 import io.github.cdimascio.dotenv.DotEnvException;
 import io.github.cdimascio.dotenv.Dotenv;

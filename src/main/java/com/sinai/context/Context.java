@@ -1,9 +1,10 @@
-package com.sinai.config.context;
+package com.sinai.context;
 
-import com.sinai.config.db.DatabaseConnection;
-import com.sinai.config.db.migration.MigrationsConfig;
-import com.sinai.config.env.EnvLoad;
 import javax.sql.DataSource;
+
+import com.sinai.libs.db.DatabaseConnection;
+import com.sinai.libs.db.migration.MigrationsConfig;
+import com.sinai.libs.env.EnvLoad;
 
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletContextEvent;

@@ -1,4 +1,4 @@
-package com.sinai.config.db;
+package com.sinai.libs.db;
 import java.sql.SQLException;
 
 import javax.sql.DataSource;

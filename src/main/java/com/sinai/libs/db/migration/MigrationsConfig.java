@@ -1,4 +1,4 @@
-package com.sinai.config.db.migration;
+package com.sinai.libs.db.migration;
 
 import javax.sql.DataSource;
 import org.flywaydb.core.Flyway;
