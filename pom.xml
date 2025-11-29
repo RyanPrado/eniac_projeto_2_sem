@@ -99,6 +99,26 @@
                     <warName>${project.artifactId}</warName>
                 </configuration>
             </plugin>
+
+             <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>9.15.1</version>
+                <configuration>
+                    <url>${DB_URL}</url>
+                    <user>${DB_USER}</user>
+                    <password>${DB_PASSWORD}</password>
+                </configuration>
+
+                <dependencies>
+                    <dependency>
+                        <groupId>org.flywaydb</groupId>
+                        <artifactId>flyway-mysql</artifactId>
+                        <version>9.15.1</version>
+                    </dependency>
+                </dependencies>
+
+            </plugin>
         </plugins>
     </build>
 </project>
