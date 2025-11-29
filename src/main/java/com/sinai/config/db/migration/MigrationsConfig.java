@@ -5,7 +5,7 @@ import org.flywaydb.core.Flyway;
 
 public class MigrationsConfig {
   public MigrationsConfig(DataSource DBDataSource) {
-    Flyway flyway = Flyway.configure().locations("classpath:/**/db/migration/*.sql").baselineOnMigrate(true).dataSource(DBDataSource).load();
+    Flyway flyway = Flyway.configure().baselineOnMigrate(true).dataSource(DBDataSource).load();
 
     flyway.migrate();
   }
