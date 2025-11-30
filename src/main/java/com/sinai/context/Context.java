@@ -1,12 +1,9 @@
 package com.sinai.context;
 
-import javax.sql.DataSource;
-
 import com.sinai.libs.db.DatabaseConnection;
 import com.sinai.libs.db.migration.MigrationsConfig;
 import com.sinai.libs.env.EnvLoad;
 
-import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletContextEvent;
 import jakarta.servlet.ServletContextListener;
 import jakarta.servlet.annotation.WebListener;
@@ -18,14 +15,9 @@ public class Context implements ServletContextListener {
   public void contextInitialized(ServletContextEvent contextConfig) {
     try {
       EnvLoad.init();
-      DatabaseConnection db = new DatabaseConnection();
+      DatabaseConnection.initPool();
 
-      ServletContext context = contextConfig.getServletContext() ;
-      DataSource connectionDataSource = db.getConnectionDataSource();
-
-      new MigrationsConfig(connectionDataSource);
-
-      context.setAttribute("DB_CONNECTION", connectionDataSource);
+      new MigrationsConfig(DatabaseConnection.getConnectionDataSource());
       
     } catch (Exception e) {
       e.printStackTrace();

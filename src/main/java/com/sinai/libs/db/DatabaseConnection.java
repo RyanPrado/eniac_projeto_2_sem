@@ -5,13 +5,12 @@ import javax.sql.DataSource;
 import com.zaxxer.hikari.HikariDataSource;
 
 public class DatabaseConnection {
-  private DataSource connectionDataSource;
-  private final String DB_URL = System.getProperty("DB_URL");
-  private final String DB_USER = System.getProperty("DB_USER");
-  private final String DB_PASSWORD = System.getProperty("DB_PASSWORD");
+  private static DataSource connectionDataSource;
+  private static final String DB_URL = System.getProperty("DB_URL");
+  private static final String DB_USER = System.getProperty("DB_USER");
+  private static final String DB_PASSWORD = System.getProperty("DB_PASSWORD");
 
-  public DatabaseConnection() throws IllegalArgumentException {
-
+  public static void initPool() {
     if(DB_URL == null || DB_URL.isEmpty()) {
       throw new IllegalArgumentException("Erro ao acessar a variável de ambiente DB_URL");
     }
@@ -36,15 +35,15 @@ public class DatabaseConnection {
     dataSourceConfig.setMaximumPoolSize(5);
     dataSourceConfig.setIdleTimeout(30000); // 5 minutos
 
-    this.connectionDataSource = dataSourceConfig;
+    connectionDataSource = dataSourceConfig;
   }
 
-  public DataSource getConnectionDataSource() throws SQLException {
+  public static DataSource getConnectionDataSource() throws SQLException {
     if(connectionDataSource == null) {
       throw new SQLException("Erro ao criar a conexão com o banco de dados");
     }
 
-    return this.connectionDataSource;
+    return connectionDataSource;
   }
 
 }
