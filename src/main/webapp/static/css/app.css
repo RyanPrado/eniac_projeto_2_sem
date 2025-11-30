@@ -12,6 +12,10 @@ body {
     min-height: 100dvh;
 }
 /* Estilos para a página home */
+body .container-home {
+    padding-left: 20px; /*adiciona espaçamento esquerdo */
+    padding-right: 20px; /*adiciona espaçamento direito */
+}
 body .container-imagens {
     display: flex; /*Permite que as imagens fiquem lado a lado*/
 }
@@ -23,15 +27,6 @@ body .imagem2 {
 }
 body .imagem3 {
     width: 383px; /*Determina o tamanho da imagem*/
-}
-body .container-imagem1 {
-    text-align: left; /*Alinha a imagem à esquerda*/
-}
-body .container-imagem2 {
-    text-align: center; /*Centraliza a imagem*/
-}
-body .container-imagem3 {
-    text-align: right; /*Alinha a imagem à direita*/
 }
 body .container-texto-das-imagens {
     display: flex; /*Permite que os textos fiquem lado a lado*/
@@ -45,6 +40,40 @@ body .container-texto-imagem2 {
     width: 350px; /*Determina a largura do texto*/
 }
 body .container-texto-imagem3 {
+    text-align: center; /*Centraliza o texto*/
+    width: 350px; /*Determina a largura do texto*/
+}
+body .container-images-services {
+    display: flex; /*Permite que as imagens fiquem lado a lado*/
+}
+body .imagem4 {
+    width: 320px; /*Determina o tamanho da imagem*/
+}
+body .imagem5 {
+    width: 320px; /*Determina o tamanho da imagem*/
+}
+body .imagem6 {
+    width: 320px; /*Determina o tamanho da imagem*/
+}
+body .imagem7 {
+    width: 320px; /*Determina o tamanho da imagem*/
+}
+body .container-text-services {
+    display: flex; /*Permite que os textos das imagens fiquem lado a lado*/
+}
+body .container-texto-imagem4 {
+    text-align: center; /*Centraliza o texto*/
+    width: 350px; /*Determina a largura do texto*/
+}
+body .container-texto-imagem5 {
+    text-align: center; /*Centraliza o texto*/
+    width: 350px; /*Determina a largura do texto*/
+}
+body .container-texto-imagem6 {
+    text-align: center; /*Centraliza o texto*/
+    width: 350px; /*Determina a largura do texto*/
+}
+body .container-texto-imagem7 {
     text-align: center; /*Centraliza o texto*/
     width: 350px; /*Determina a largura do texto*/
 }
