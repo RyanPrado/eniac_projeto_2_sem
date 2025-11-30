@@ -1,4 +1,4 @@
-package com.example.model;
+package com.sinai.model;
 
 import java.util.Objects;
 
