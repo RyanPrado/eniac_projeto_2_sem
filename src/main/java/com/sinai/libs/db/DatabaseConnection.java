@@ -1,5 +1,4 @@
 package com.sinai.libs.db;
-import java.sql.SQLException;
 
 import javax.sql.DataSource;
 import com.zaxxer.hikari.HikariDataSource;
@@ -38,11 +37,7 @@ public class DatabaseConnection {
     connectionDataSource = dataSourceConfig;
   }
 
-  public static DataSource getConnectionDataSource() throws SQLException {
-    if(connectionDataSource == null) {
-      throw new SQLException("Erro ao criar a conexão com o banco de dados");
-    }
-
+  public static DataSource getConnectionDataSource() {
     return connectionDataSource;
   }
 
