@@ -13,13 +13,14 @@ import jakarta.servlet.annotation.WebListener;
 
 @WebListener
 public class Context implements ServletContextListener {
+  
   @Override
   public void contextInitialized(ServletContextEvent contextConfig) {
-    new EnvLoad();
-    DatabaseConnection db = new DatabaseConnection();
-
     try {
-      ServletContext context = contextConfig.getServletContext();
+      EnvLoad.init();
+      DatabaseConnection db = new DatabaseConnection();
+
+      ServletContext context = contextConfig.getServletContext() ;
       DataSource connectionDataSource = db.getConnectionDataSource();
 
       new MigrationsConfig(connectionDataSource);
@@ -29,7 +30,7 @@ public class Context implements ServletContextListener {
     } catch (Exception e) {
       e.printStackTrace();
 
-      System.out.println("Erro ao criar o contexto: " + e.getMessage());
+      System.err.print("Erro ao criar o contexto: " + e.getMessage());
     }
   }
 }
