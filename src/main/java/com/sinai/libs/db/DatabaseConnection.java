@@ -1,6 +1,8 @@
 package com.sinai.libs.db;
 
 import javax.sql.DataSource;
+
+import com.sinai.util.Validator;
 import com.zaxxer.hikari.HikariDataSource;
 
 public class DatabaseConnection {
@@ -10,15 +12,15 @@ public class DatabaseConnection {
   private static final String DB_PASSWORD = System.getProperty("DB_PASSWORD");
 
   public static void initPool() {
-    if(DB_URL == null || DB_URL.isEmpty()) {
+    if(Validator.isBlankOrNull(DB_URL)) {
       throw new IllegalArgumentException("Erro ao acessar a variável de ambiente DB_URL");
     }
 
-    if(DB_USER == null || DB_USER.isEmpty()) {
+    if(Validator.isBlankOrNull(DB_USER)) {
       throw new IllegalArgumentException("Erro ao acessar a variável de ambiente DB_USER");
     }
 
-    if(DB_PASSWORD == null || DB_PASSWORD.isEmpty()) {
+    if(Validator.isBlankOrNull(DB_PASSWORD)) {
       throw new IllegalArgumentException("Erro ao acessar a variável de ambiente DB_PASSWORD");
     }
 
