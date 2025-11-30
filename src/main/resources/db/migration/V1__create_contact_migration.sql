@@ -4,5 +4,5 @@ CREATE TABLE contact (
   email VARCHAR(512) NOT NULL,
   phone CHAR(13) NOT NULL,
   message VARCHAR(2048) NOT NULL,
-  created_at DATETIME NOW
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 )
