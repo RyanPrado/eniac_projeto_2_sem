@@ -1,7 +1,5 @@
 package com.sinai.service;
 
-import java.util.function.Predicate;
-
 import javax.sql.DataSource;
 
 import com.sinai.exception.ContactException;
@@ -27,5 +25,8 @@ public class ContactService {
     if(Validator.isBlankOrNull(contact.getFirstName())) throw new ContactException("Nome inválido ou vazio!");
 
     if(Validator.isBlankOrNull(contact.getMessage())) throw new ContactException("Menságem inválida ou vazia!");
+
+    contact.setPhone(phoneFormated);
+    Contactrepository.create(contact);
   }
 }
