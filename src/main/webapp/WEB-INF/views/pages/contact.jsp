@@ -16,6 +16,7 @@
                 <legend>Fale Conosco</legend>
                 <form name="contactForm" method="post" action="${pageContext.request.contextPath}/submitContact">
                     <div class="internal-contactForm">
+                        Bem vindo(a) à área contato, escreva a sua dúvida ou sugestão e entraremos em contato com você. <br><br>
                         <label for="name">Nome:</label><br>
                         <input class="name-input"type="text" id="name" name="name"><br><br>
                         <label for="email">Email:</label><br>

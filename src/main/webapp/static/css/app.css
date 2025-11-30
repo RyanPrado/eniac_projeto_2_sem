@@ -61,7 +61,7 @@ body .container-contactForm {
     background-color: aquamarine; /* cor de fundo aquamarine*/
 }
 body .contactForm{
-    background-color:#6c757d; /* Cor de fundo cinza */
+    background-color:#F3F4F6; /* Cor de fundo cinza */
     width: 70vw; /* Largura de 70% da viewport */
     height: 70vh; /* Altura de 70% da viewport */
 }
@@ -83,31 +83,21 @@ body .internal-contactForm{
 /* Estilos para a página Localização */
 body .container-map {
     display: flex; /* Permite o uso de flexbox */
-    width: 97vw; /* Garante que ocupe quase a largura da viewport */
-    height: 50vh; /* Garante que ocupe 50% a altura da viewport */
-    padding-right: 20px;
-    padding-left: 20px;
+    padding-right: 20px; /* Cria um espaço de 20px na lateral direita */
+    padding-left: 20px; /* Cria um espaço de 20px na lateral esquerda */
 }
 body .text-map {
-    text-align: left; 
+    text-align: left; /* Alinha o texto a esquerda */
 }
 body #map {
-    text-align: right;
+    text-align: right; /* Alinha o mapa a direita */
 }
 body .text-link-localization {
-    text-decoration: none;
+    text-decoration: none; /*Retira a suplinhado do link*/
 }
 body .clinic-banner {
     width: 43vw; /* Garante que ocupe 45% a largura da viewport */
 }
-
-
-
-
-
-
-
-
 :root {
     --primary-color: #007bff;
     --secondary-color: #6c757d;
