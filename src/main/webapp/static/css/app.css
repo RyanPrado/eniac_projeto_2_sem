@@ -37,7 +37,7 @@ body .container-texto-das-imagens {
     display: flex; /*Permite que os textos fiquem lado a lado*/
 }
 body .container-texto-imagem1 {
-    text-align: center; /*Alinha o texto à esquerda*/
+    text-align: center; /*Centraliza o texto*/
     width: 350px; /*Determina a largura do texto*/
 }
 body .container-texto-imagem2 {
@@ -45,7 +45,7 @@ body .container-texto-imagem2 {
     width: 350px; /*Determina a largura do texto*/
 }
 body .container-texto-imagem3 {
-    text-align: center; /*Alinha o texto à direita*/
+    text-align: center; /*Centraliza o texto*/
     width: 350px; /*Determina a largura do texto*/
 }
 /* Estilos para a página de contato */
@@ -58,7 +58,7 @@ body .container-contactForm {
     width: 100vw; /* Garante que ocupe toda a largura da viewport */
     margin-left: 0; /* Garante que ela comece do canto esquerdo absoluto */
     height: 100vh; /* Garante que ocupe toda a altura da viewport */
-    background-color: aquamarine;
+    background-color: aquamarine; /* cor de fundo aquamarine*/
 }
 body .contactForm{
     background-color:#6c757d; /* Cor de fundo cinza */
@@ -80,6 +80,33 @@ body .internal-contactForm{
     justify-content: center; /* Centraliza horizontalmente */
     align-items: center;     /* Centraliza verticalmente */
 }
+/* Estilos para a página Localização */
+body .container-map {
+    display: flex; /* Permite o uso de flexbox */
+    width: 97vw; /* Garante que ocupe quase a largura da viewport */
+    height: 50vh; /* Garante que ocupe 50% a altura da viewport */
+    padding-right: 20px;
+    padding-left: 20px;
+}
+body .text-map {
+    text-align: left; 
+}
+body #map {
+    text-align: right;
+}
+body .text-link-localization {
+    text-decoration: none;
+}
+body .clinic-banner {
+    width: 43vw; /* Garante que ocupe 45% a largura da viewport */
+}
+
+
+
+
+
+
+
 
 :root {
     --primary-color: #007bff;

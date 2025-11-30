@@ -32,7 +32,7 @@
     Evento de doações de alimentos não perecíveis ao Lar Mont Sinai 
     Idealizado pela aluna Anna Giulia Muniz, com apoio do professor 
     Thiago Santana e Coordenadora Fernanda Brito. <br/>
-    Além de trabalhar com a arrecadação de produtos alimentícios, teve 
+    Além de trabalhar com a arrecadação de alimentos, teve 
     como objetivo promover a interação social com a terceira idade e 
     conscientizar a todos da importância de ter um olhar mais generosos 
     com os idosos <br/> <br/>
