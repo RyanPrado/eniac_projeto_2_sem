@@ -100,7 +100,7 @@
                 </configuration>
             </plugin>
 
-             <plugin>
+            <plugin>
                 <groupId>org.flywaydb</groupId>
                 <artifactId>flyway-maven-plugin</artifactId>
                 <version>9.15.1</version>

@@ -4,8 +4,8 @@ import javax.sql.DataSource;
 import org.flywaydb.core.Flyway;
 
 public class MigrationsConfig {
-  public MigrationsConfig(DataSource DBDataSource) {
-    Flyway flyway = Flyway.configure().baselineOnMigrate(true).dataSource(DBDataSource).load();
+  public MigrationsConfig(DataSource dbDataSource) {
+    Flyway flyway = Flyway.configure().baselineOnMigrate(true).dataSource(dbDataSource).load();
 
     flyway.migrate();
   }
