@@ -1,3 +1,13 @@
+# [1.5.0](https://github.com/RyanPrado/eniac_projeto_2_sem/compare/v1.4.0...v1.5.0) (2025-12-01)
+
+
+### Features
+
+* Add content to the home screen. ([44a15da](https://github.com/RyanPrado/eniac_projeto_2_sem/commit/44a15da2109f51127f3c5d5c2f4ba1d21af95ee8))
+* add header components to contact, home, and localization pages ([e959617](https://github.com/RyanPrado/eniac_projeto_2_sem/commit/e959617163553df8566bf645699f57bbcc031dfa))
+* Add images to the homepage. ([954294e](https://github.com/RyanPrado/eniac_projeto_2_sem/commit/954294e62ce88df91e765a71bb8b74ef176b32cb))
+* Update home page image and add placeholder image ([5df8dd3](https://github.com/RyanPrado/eniac_projeto_2_sem/commit/5df8dd3adec467125ee8f2cf1f805535857886ab))
+
 # [1.4.0](https://github.com/RyanPrado/eniac_projeto_2_sem/compare/v1.3.0...v1.4.0) (2025-12-01)
 
 
