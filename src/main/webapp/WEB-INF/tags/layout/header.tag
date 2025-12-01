@@ -1,5 +1,5 @@
 <%@ include file="/WEB-INF/jspf/global-taglibs.jsp" %>
-<%@ attribute name="title" required="true" %>
+<%@ attribute name="heading" required="true" %>
 <%@ attribute name="show_button" required="false" %>
 <%@ tag dynamic-attributes="dynamicAttrs" pageEncoding="UTF-8" %>
 <c:set var="classValue" value="header-main" />
@@ -7,22 +7,22 @@
     <c:set var="classValue" value="${classValue} ${dynamicAttrs['class']}" />
 </c:if>
 
-<c:set var="title" value="${title}" />
+<c:set var="heading" value="${heading}" />
 <c:set var="show_button" value="${show_button}" />
 <c:if test="${show_button == null}">
     <c:set var="show_button" value="true" />
 </c:if>
 
 <header class="${classValue}">
-    <h1>${title}</h1>
     <nav>
-        <a href="${pageContext.request.contextPath}/">Home</a>
-        <a href="${pageContext.request.contextPath}/localization">Localização</a>
-        <a href="${pageContext.request.contextPath}/contact">Contato</a>
+        <a class=link_button_home href="${pageContext.request.contextPath}/"><button class=home_button>Home</button></a>
+        <a class=link_localizacao_button href="${pageContext.request.contextPath}/localization"><button class=localizacao_button>Localização</button></a>
+        <a class=link_contato_button href="${pageContext.request.contextPath}/contact"><button class=contato_button>Contato</button></a>
     </nav>
-    <c:if test="${show_button}">
+    <h1>${heading}</h1>
+    <!--<c:if test="${show_button}">
         <components:button label="Fale Conosco" severity="primary" class="TEST"/>
-    </c:if>
+    </c:if> -->
 </header>
 
 <script>
