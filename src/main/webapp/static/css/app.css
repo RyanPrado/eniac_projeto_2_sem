@@ -122,7 +122,7 @@ body #map {
     text-align: right; /* Alinha o mapa a direita */
 }
 body .text-link-localization {
-    text-decoration: none; /*Retira a suplinhado do link*/
+    text-decoration: none; /*Retira a sublinhado do link*/
 }
 body .clinic-banner {
     width: 43vw; /* Garante que ocupe 45% a largura da viewport */
