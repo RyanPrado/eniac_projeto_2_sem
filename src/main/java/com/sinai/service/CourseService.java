@@ -1,8 +1,8 @@
-package com.example.service;
-
-import com.example.model.Course;
+package com.sinai.service;
 
 import java.util.List;
+
+import com.sinai.model.Course;
 
 /**
  * Provides demo data for the MVC example. In a real project this would talk to

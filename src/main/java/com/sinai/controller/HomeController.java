@@ -1,14 +1,13 @@
-package com.example.controller;
-
-import com.example.service.CourseService;
+package com.sinai.controller;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-
 import java.io.IOException;
+
+import com.sinai.service.CourseService;
 
 /**
  * Handles requests for the home page and forwards data to the JSP view.
@@ -17,7 +16,7 @@ import java.io.IOException;
 public class HomeController extends HttpServlet {
 
     private final CourseService courseService = new CourseService();
-
+    
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setAttribute("courses", courseService.findFeaturedCourses());
