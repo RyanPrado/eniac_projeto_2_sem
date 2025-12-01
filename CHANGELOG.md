@@ -1,3 +1,26 @@
+# [1.4.0](https://github.com/RyanPrado/eniac_projeto_2_sem/compare/v1.3.0...v1.4.0) (2025-12-01)
+
+
+### Bug Fixes
+
+* add new layer of envs verification ([2564c4e](https://github.com/RyanPrado/eniac_projeto_2_sem/commit/2564c4e18144734ceeec1d7f523c8bf8d63a012a))
+* changed directory name of config to libs where stay libs configs & move context to package root. ([05caf91](https://github.com/RyanPrado/eniac_projeto_2_sem/commit/05caf918479048c8cc174e30bf01a84815d66295))
+* changed Flyway version to one compatible with Java 11 & add and configure resources directory. ([cb96d3f](https://github.com/RyanPrado/eniac_projeto_2_sem/commit/cb96d3fb1ea6c94b262ce848203e09799c4582af))
+* remove unnecessary empty lines and ensure DB_URL is correctly formatted ([a8b933f](https://github.com/RyanPrado/eniac_projeto_2_sem/commit/a8b933f6cc23ed5a34573bcad82a0322beb617a8))
+* removed database connection from HomeController ([ca0d56b](https://github.com/RyanPrado/eniac_projeto_2_sem/commit/ca0d56b4a14b59385c9b05259cc53c64c3153d45))
+* Update pom.xml ([26d4e9f](https://github.com/RyanPrado/eniac_projeto_2_sem/commit/26d4e9fe553f20901aa0996fa8d5ece0bfc8089f))
+
+
+### Features
+
+* add flyway cli ([888dce1](https://github.com/RyanPrado/eniac_projeto_2_sem/commit/888dce1e98ece989f9d44e1dcdc7b540202095ae))
+* Add Flyway to make DB migrations versionament & create MigrationConfig to handle with all migrations config ([79819ab](https://github.com/RyanPrado/eniac_projeto_2_sem/commit/79819ab87c8023eebb209ba8777d354bc8e73b40))
+* add MigrationConfig to Context for execute migrations ([d6be6b5](https://github.com/RyanPrado/eniac_projeto_2_sem/commit/d6be6b560a19c6b794d2c871d9e528576b24cb70))
+* Create DatabaseConnetion & insert inside of the app context ([32863ad](https://github.com/RyanPrado/eniac_projeto_2_sem/commit/32863ad292616b002ad5e3f603b6fb7cb3d99b42))
+* create the pool connection configuration ([de3e153](https://github.com/RyanPrado/eniac_projeto_2_sem/commit/de3e15383741bc6b3a2854754bfe5a07ded2a026))
+* Created EnvLoad class that make sure that load environments variables. ([e0a4f26](https://github.com/RyanPrado/eniac_projeto_2_sem/commit/e0a4f262496b587676b13769266d637cd2769965))
+* created example for how use db connection ([bd8b470](https://github.com/RyanPrado/eniac_projeto_2_sem/commit/bd8b470edffdb61bf581830b6686d2d99ffb6f9d))
+
 # [1.3.0](https://github.com/RyanPrado/eniac_projeto_2_sem/compare/v1.2.0...v1.3.0) (2025-11-06)
 
 
