@@ -5,7 +5,7 @@
 body {
     all: unset;
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
-    background-color: #f3f4f6;
+    background-color: #46cceec7;
     color: #1f2933;
     display: flex;
     flex-direction: column;
@@ -21,42 +21,66 @@ body .container-imagens {
 }
 body .imagem1 {
     width: 350px; /*Determina o tamanho da imagem*/
+    border-style:groove ;
+    border-color: rgba(5, 185, 240, 0.856);
+    border-width: 10px;
 }
 body .imagem2 {
     width: 350px; /*Determina o tamanho da imagem*/
+    border-style:groove ;
+    border-color: rgba(5, 185, 240, 0.856);
+    border-width: 10px;
 }
 body .imagem3 {
     width: 383px; /*Determina o tamanho da imagem*/
+    border-style:groove ;
+    border-color: rgba(5, 185, 240, 0.856);
+    border-width: 10px;
 }
 body .container-texto-das-imagens {
     display: flex; /*Permite que os textos fiquem lado a lado*/
 }
 body .container-texto-imagem1 {
     text-align: center; /*Centraliza o texto*/
-    width: 350px; /*Determina a largura do texto*/
+    width: 373px; /*Determina a largura do texto*/
+    background-color: white;
 }
 body .container-texto-imagem2 {
     text-align: center; /*Centraliza o texto*/
-    width: 350px; /*Determina a largura do texto*/
+    width: 370px; /*Determina a largura do texto*/
+    background-color: white;
 }
 body .container-texto-imagem3 {
     text-align: center; /*Centraliza o texto*/
-    width: 350px; /*Determina a largura do texto*/
+    width: 400px; /*Determina a largura do texto*/
+    background-color: white;
 }
 body .container-images-services {
     display: flex; /*Permite que as imagens fiquem lado a lado*/
 }
 body .imagem4 {
     width: 320px; /*Determina o tamanho da imagem*/
+    border-style:groove ;
+    border-color: rgba(5, 185, 240, 0.856);
+    border-width: 5px;
 }
 body .imagem5 {
     width: 320px; /*Determina o tamanho da imagem*/
+    border-style:groove ;
+    border-color: rgba(5, 185, 240, 0.856);
+    border-width: 5px;
 }
 body .imagem6 {
     width: 320px; /*Determina o tamanho da imagem*/
+    border-style:groove ;
+    border-color: rgba(5, 185, 240, 0.856);
+    border-width: 5px;
 }
 body .imagem7 {
     width: 320px; /*Determina o tamanho da imagem*/
+    border-style:groove ;
+    border-color: rgba(5, 185, 240, 0.856);
+    border-width: 5px;
 }
 body .container-text-services {
     display: flex; /*Permite que os textos das imagens fiquem lado a lado*/
@@ -87,7 +111,7 @@ body .container-contactForm {
     width: 100vw; /* Garante que ocupe toda a largura da viewport */
     margin-left: 0; /* Garante que ela comece do canto esquerdo absoluto */
     height: 100vh; /* Garante que ocupe toda a altura da viewport */
-    background-color: aquamarine; /* cor de fundo aquamarine*/
+    background-color: rgb(5, 185, 240, 0.856); /* cor de fundo aquamarine*/
 }
 body .contactForm{
     background-color:#F3F4F6; /* Cor de fundo cinza */
@@ -109,6 +133,20 @@ body .internal-contactForm{
     justify-content: center; /* Centraliza horizontalmente */
     align-items: center;     /* Centraliza verticalmente */
 }
+fieldset {
+  background-color: #eeeeee; /* Cor de fundo para o fieldset (cinza claro) */
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 10px;
+}
+legend {
+  background-color: gray;   /* Cor de fundo para a legend (cinza escuro) */
+  color: white;             /* Cor do texto para melhor contraste */
+  padding: 5px 10px;        /* Espaçamento interno para melhor visualização */
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
 /* Estilos para a página Localização */
 body .container-map {
     display: flex; /* Permite o uso de flexbox */
@@ -126,6 +164,9 @@ body .text-link-localization {
 }
 body .clinic-banner {
     width: 43vw; /* Garante que ocupe 45% a largura da viewport */
+    border-style:groove ;
+    border-color: rgba(5, 185, 240, 0.856);
+    border-width: 10px;
 }
 :root {
     --primary-color: #007bff;

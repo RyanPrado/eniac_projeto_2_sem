@@ -17,18 +17,19 @@ header.header-main nav {
     width: 100%;
     display: flex;
     justify-content: flex-end; 
-    background-color:aquamarine;
+    background-color:rgb(5, 185, 240, 0.856);
 }
 
 .home_button{
     background-color: #4ca8af; 
     color: rgb(247, 247, 247);
     padding: 10px 20px;
-    border: none;
+    border-radius: 7px;
     transition: box-shadow 0.2s ease, transform 0.12s ease;
+    border-color: darkblue;
 }
 .home_button:hover{
-    box-shadow: 0 8px 20px rgba(255, 0, 25, 0.911);
+    box-shadow: 0 8px 20px rgb(6, 85, 150);
     transform: translateY(-1px);
 }
 
@@ -37,18 +38,19 @@ header.header-main nav {
     background-color: #4ca8af; 
     color: rgb(247, 247, 247);
     padding: 10px 20px;
-    border: none;
+    border-radius: 7px;
     transition: box-shadow 0.2s ease, transform 0.12s ease;
+    border-color: darkblue;
 }
 .localizacao_button:hover,
 .contato_button:hover {
-    box-shadow: 0 8px 20px rgba(255, 0, 25, 0.911);
-    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgb(6, 85, 150);
+    transform: translateY(-2px);
 }
 
 .home_button:focus-visible,
 .localizacao_button:focus-visible,
 .contato_button:focus-visible {
-    box-shadow: 0 8px 20px rgba(255, 0, 25, 0.911);
+    box-shadow: 0 8px 20px rgb(6, 85, 150);
     outline: none;
 }
