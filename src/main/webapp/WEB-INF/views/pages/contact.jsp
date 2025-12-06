@@ -13,7 +13,7 @@
     <layout:main>
         <div class="container-contactForm">
             <fieldset class="contactForm">
-                <legend>Fale Conosco</legend>
+                <legend style="font-size: 20px;">Fale Conosco</legend>
                 <form name="contactForm" id="contactForm" method="post" action="${pageContext.request.contextPath}/contact">
                     <div class="internal-contactForm">
                         Bem vindo(a) à área contato, escreva a sua dúvida ou sugestão e entraremos em contato com você. <br><br>
